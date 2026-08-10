@@ -1,0 +1,10 @@
+{
+  "name": "wakayama-engineer-platform-lp",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Landing page for WAKAYAMA ENGINEER PLATFORM Discord server",
+  "scripts": {
+    "dev": "npx --yes serve -l 5173",
+    "start": "npx --yes serve -l 5173"
+  }
+}
