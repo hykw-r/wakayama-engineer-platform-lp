@@ -722,17 +722,11 @@ a {
   margin: 0;
 }
 
-.footer-note {
-  margin-top: 0.45rem !important;
-}
-
-.footer-note a {
-  color: var(--text-muted);
-  transition: color 160ms ease;
-}
-
-.footer-note a:hover {
-  color: var(--cyan);
+.footer-copy {
+  margin-top: 0.65rem !important;
+  font-size: 0.9em;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
 }
 
 /* Motion / reveal — stay readable even if JS/IO fails */
