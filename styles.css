@@ -216,12 +216,15 @@ a {
 
 .hero h1 {
   margin: 0 0 1rem;
-  max-width: 16ch;
+  max-width: 20em;
   font-family: var(--font-body);
   font-size: clamp(1.35rem, 3.4vw, 2rem);
   font-weight: 700;
   line-height: 1.45;
   color: var(--text);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-break: strict;
 }
 
 .lede {
@@ -229,6 +232,9 @@ a {
   max-width: 34em;
   font-size: clamp(0.95rem, 2.2vw, 1.05rem);
   color: var(--text-muted);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-break: strict;
 }
 
 .hero-actions {
@@ -366,6 +372,9 @@ a {
   margin: 0 0 1.75rem;
   max-width: 28em;
   color: var(--text-muted);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-break: strict;
 }
 
 .site-footer {
@@ -481,7 +490,4 @@ a {
     padding-bottom: 2.75rem;
   }
 
-  .hero h1 {
-    max-width: none;
-  }
 }
