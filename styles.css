@@ -12,13 +12,13 @@
   --text-dim: #5f7380;
   --border: rgba(45, 226, 230, 0.18);
   --border-hot: rgba(247, 37, 133, 0.35);
-  --header-h: 64px;
+  --header-h: 72px;
   --font-display: "Chakra Petch", "IBM Plex Sans JP", sans-serif;
   --font-mono: "Share Tech Mono", ui-monospace, monospace;
   --font-body: "IBM Plex Sans JP", "Chakra Petch", sans-serif;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-snap: cubic-bezier(0.7, 0, 0.2, 1);
-  --max: 720px;
+  --max: 820px;
 }
 
 *,
@@ -129,8 +129,8 @@ a {
 
 .logo-mark {
   flex: 0 0 auto;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background: var(--cyan);
   box-shadow:
     0 0 0 1px rgba(45, 226, 230, 0.4),
@@ -141,7 +141,7 @@ a {
 
 .logo-text {
   font-family: var(--font-mono);
-  font-size: clamp(0.68rem, 2vw, 0.8rem);
+  font-size: clamp(0.78rem, 1.4vw, 1.05rem);
   font-weight: 400;
   letter-spacing: 0.08em;
   white-space: nowrap;
@@ -226,8 +226,8 @@ a {
 }
 
 .btn-sm {
-  padding: 0.55rem 1rem;
-  font-size: 0.82rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.95rem;
 }
 
 .btn-lg {
@@ -253,7 +253,7 @@ a {
 
 .hero-media {
   position: absolute;
-  inset: -4%;
+  inset: 0;
   z-index: -2;
   will-change: transform;
 }
@@ -262,8 +262,8 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
-  transform: scale(1.08);
+  object-position: center 40%;
+  transform: scale(1.04);
   filter: contrast(1.08) saturate(1.1) brightness(0.9);
   animation: hero-drift 18s var(--ease-out) both;
 }
@@ -321,7 +321,7 @@ a {
   position: relative;
   margin: 0 0 1.1rem;
   font-family: var(--font-display);
-  font-size: clamp(1.55rem, 5.4vw, 3rem);
+  font-size: clamp(1.5rem, 4.2vw, 3.35rem);
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1.05;
@@ -361,11 +361,11 @@ a {
 
 .hero-title {
   margin: 0 0 1rem;
-  max-width: 20em;
+  max-width: 22em;
   font-family: var(--font-body);
-  font-size: clamp(1.3rem, 3.2vw, 1.9rem);
+  font-size: clamp(1.3rem, 2.6vw, 2.35rem);
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.5;
   color: var(--text);
   word-break: keep-all;
   overflow-wrap: anywhere;
@@ -376,8 +376,9 @@ a {
 
 .lede {
   margin: 0 0 1.75rem;
-  max-width: 34em;
-  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  max-width: 40em;
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  line-height: 1.85;
   color: var(--text-muted);
   word-break: keep-all;
   overflow-wrap: anywhere;
@@ -450,7 +451,7 @@ a {
 .section-label {
   margin: 0 0 0.85rem;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -458,9 +459,9 @@ a {
 }
 
 .section-title {
-  margin: 0 0 1rem;
+  margin: 0 0 1.15rem;
   font-family: var(--font-body);
-  font-size: clamp(1.45rem, 3.2vw, 1.95rem);
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
   font-weight: 700;
   line-height: 1.35;
   letter-spacing: 0.01em;
@@ -468,7 +469,8 @@ a {
 
 .section-text {
   margin: 0;
-  font-size: 1.02rem;
+  font-size: clamp(1.12rem, 1.45vw, 1.35rem);
+  line-height: 1.9;
   color: var(--text-muted);
 }
 
@@ -524,22 +526,23 @@ a {
   display: inline-block;
   margin-top: 0.2rem;
   font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   letter-spacing: 0.08em;
   color: var(--acid);
   text-shadow: 0 0 12px rgba(214, 255, 63, 0.35);
 }
 
 .step h3 {
-  margin: 0 0 0.35rem;
-  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.15rem, 1.5vw, 1.4rem);
   font-weight: 700;
 }
 
 .step p {
   margin: 0;
   color: var(--text-muted);
-  font-size: 0.98rem;
+  font-size: clamp(1.08rem, 1.3vw, 1.25rem);
+  line-height: 1.8;
 }
 
 .cta {
@@ -594,15 +597,17 @@ a {
 }
 
 .cta-title {
-  margin: 0 0 0.75rem;
-  font-size: clamp(1.45rem, 3.4vw, 2rem);
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
   font-weight: 700;
   line-height: 1.35;
 }
 
 .cta-text {
   margin: 0 0 1.75rem;
-  max-width: 28em;
+  max-width: 34em;
+  font-size: clamp(1.12rem, 1.45vw, 1.35rem);
+  line-height: 1.85;
   color: var(--text-muted);
   word-break: keep-all;
   overflow-wrap: anywhere;
@@ -689,10 +694,10 @@ a {
 
 @keyframes hero-drift {
   from {
-    transform: scale(1.14) translate3d(0, 0, 0);
+    transform: scale(1.08) translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.08) translate3d(0, -1.5%, 0);
+    transform: scale(1.04) translate3d(0, -1%, 0);
   }
 }
 
@@ -821,9 +826,44 @@ a {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .logo-text {
     max-width: 42vw;
+  }
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  /* 縦長画面で cover すると寄りすぎるため、画像帯を横長寄りにする */
+  .hero-media {
+    inset: auto 0 auto 0;
+    top: 0;
+    height: 46svh;
+  }
+
+  .hero-media img {
+    object-fit: cover;
+    object-position: 42% 40%;
+    transform: none;
+    animation: none;
+  }
+
+  .hero-scrim {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 7, 12, 0.2) 0%,
+        rgba(5, 7, 12, 0.15) 32%,
+        rgba(5, 7, 12, 0.88) 58%,
+        rgba(5, 7, 12, 1) 78%
+      ),
+      linear-gradient(
+        105deg,
+        rgba(5, 7, 12, 0.45) 0%,
+        rgba(5, 7, 12, 0.12) 55%,
+        rgba(247, 37, 133, 0.12) 100%
+      );
   }
 
   .hero-content {
@@ -831,7 +871,8 @@ a {
   }
 
   .hero-grid {
-    opacity: 0.35;
+    opacity: 0.22;
+    height: 34%;
   }
 
   .cta-frame {
@@ -839,6 +880,51 @@ a {
   }
 
   .brand {
-    font-size: clamp(1.35rem, 7vw, 2rem);
+    font-size: clamp(1.35rem, 7vw, 1.85rem);
+  }
+
+  .hero-title {
+    font-size: 1.2rem;
+  }
+
+  .lede {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+
+  :root {
+    --header-h: 80px;
+  }
+
+  .logo-text {
+    font-size: 1.1rem;
+  }
+
+  .logo-mark {
+    width: 14px;
+    height: 14px;
+  }
+
+  .site-header .btn-sm {
+    padding: 0.8rem 1.35rem;
+    font-size: 1rem;
+  }
+
+  .hero-media img {
+    object-position: center 38%;
+  }
+
+  .hero-content {
+    width: min(100%, 1080px);
+  }
+
+  .btn-lg {
+    padding: 1.15rem 1.85rem;
+    font-size: 1.1rem;
   }
 }
