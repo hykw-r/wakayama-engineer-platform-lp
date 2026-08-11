@@ -39,6 +39,17 @@ if ("IntersectionObserver" in window && !prefersReducedMotion) {
   for (const el of revealEls) showReveal(el);
 }
 
+const scrollCue = document.querySelector("[data-scroll-cue]");
+if (scrollCue) {
+  const syncScrollCue = () => {
+    const hide = window.scrollY > window.innerHeight * 0.18;
+    scrollCue.classList.toggle("is-hidden", hide);
+  };
+
+  syncScrollCue();
+  window.addEventListener("scroll", syncScrollCue, { passive: true });
+}
+
 if (!prefersReducedMotion) {
   const brand = document.querySelector("[data-glitch]");
   if (brand) {

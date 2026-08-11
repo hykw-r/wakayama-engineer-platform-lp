@@ -18,7 +18,7 @@
   --font-body: "IBM Plex Sans JP", "Chakra Petch", sans-serif;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-snap: cubic-bezier(0.7, 0, 0.2, 1);
-  --max: 820px;
+  --max: 880px;
 }
 
 *,
@@ -321,7 +321,7 @@ a {
   position: relative;
   margin: 0 0 1.1rem;
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4.2vw, 3.35rem);
+  font-size: clamp(1.5rem, 4.8vw, 4rem);
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1.05;
@@ -363,7 +363,7 @@ a {
   margin: 0 0 1rem;
   max-width: 22em;
   font-family: var(--font-body);
-  font-size: clamp(1.3rem, 2.6vw, 2.35rem);
+  font-size: clamp(1.3rem, 2.8vw, 2.6rem);
   font-weight: 700;
   line-height: 1.5;
   color: var(--text);
@@ -377,7 +377,7 @@ a {
 .lede {
   margin: 0 0 1.75rem;
   max-width: 40em;
-  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  font-size: clamp(1.05rem, 1.6vw, 1.45rem);
   line-height: 1.85;
   color: var(--text-muted);
   word-break: keep-all;
@@ -393,6 +393,80 @@ a {
   gap: 0.75rem;
   animation: rise-in 900ms var(--ease-out) 320ms both;
   opacity: 1;
+}
+
+.scroll-cue {
+  position: absolute;
+  right: clamp(1rem, 4vw, 2.5rem);
+  bottom: 4.25rem;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--cyan);
+  text-decoration: none;
+  transition:
+    opacity 280ms ease,
+    transform 280ms var(--ease-out);
+}
+
+.scroll-cue.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+}
+
+.scroll-cue-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: var(--cyan-dim);
+}
+
+.scroll-cue-track {
+  position: relative;
+  width: 1px;
+  height: 52px;
+  background: linear-gradient(
+    180deg,
+    rgba(45, 226, 230, 0.15),
+    rgba(45, 226, 230, 0.7),
+    rgba(247, 37, 133, 0.55)
+  );
+  overflow: hidden;
+}
+
+.scroll-cue-dot {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  margin-left: -2.5px;
+  border-radius: 50%;
+  background: var(--acid);
+  box-shadow: 0 0 10px rgba(214, 255, 63, 0.7);
+  animation: scroll-dot 1.8s var(--ease-out) infinite;
+}
+
+.scroll-cue-chevron {
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--cyan);
+  border-bottom: 1.5px solid var(--cyan);
+  transform: rotate(45deg);
+  animation: scroll-chevron 1.8s var(--ease-out) infinite;
+}
+
+.scroll-cue:hover {
+  transform: translateY(3px);
+}
+
+.scroll-cue:hover .scroll-cue-label {
+  color: var(--cyan);
 }
 
 .hero-ticker {
@@ -451,7 +525,7 @@ a {
 .section-label {
   margin: 0 0 0.85rem;
   font-family: var(--font-mono);
-  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  font-size: clamp(0.85rem, 1.15vw, 1.1rem);
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -461,7 +535,7 @@ a {
 .section-title {
   margin: 0 0 1.15rem;
   font-family: var(--font-body);
-  font-size: clamp(1.65rem, 3vw, 2.5rem);
+  font-size: clamp(1.65rem, 3.2vw, 2.85rem);
   font-weight: 700;
   line-height: 1.35;
   letter-spacing: 0.01em;
@@ -469,7 +543,7 @@ a {
 
 .section-text {
   margin: 0;
-  font-size: clamp(1.12rem, 1.45vw, 1.35rem);
+  font-size: clamp(1.12rem, 1.55vw, 1.45rem);
   line-height: 1.9;
   color: var(--text-muted);
 }
@@ -526,7 +600,7 @@ a {
   display: inline-block;
   margin-top: 0.2rem;
   font-family: var(--font-mono);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   letter-spacing: 0.08em;
   color: var(--acid);
   text-shadow: 0 0 12px rgba(214, 255, 63, 0.35);
@@ -534,14 +608,14 @@ a {
 
 .step h3 {
   margin: 0 0 0.4rem;
-  font-size: clamp(1.15rem, 1.5vw, 1.4rem);
+  font-size: clamp(1.15rem, 1.6vw, 1.55rem);
   font-weight: 700;
 }
 
 .step p {
   margin: 0;
   color: var(--text-muted);
-  font-size: clamp(1.08rem, 1.3vw, 1.25rem);
+  font-size: clamp(1.08rem, 1.4vw, 1.35rem);
   line-height: 1.8;
 }
 
@@ -598,7 +672,7 @@ a {
 
 .cta-title {
   margin: 0 0 0.85rem;
-  font-size: clamp(1.65rem, 3vw, 2.5rem);
+  font-size: clamp(1.65rem, 3.2vw, 2.85rem);
   font-weight: 700;
   line-height: 1.35;
 }
@@ -606,7 +680,7 @@ a {
 .cta-text {
   margin: 0 0 1.75rem;
   max-width: 34em;
-  font-size: clamp(1.12rem, 1.45vw, 1.35rem);
+  font-size: clamp(1.12rem, 1.55vw, 1.45rem);
   line-height: 1.85;
   color: var(--text-muted);
   word-break: keep-all;
@@ -784,6 +858,35 @@ a {
   }
 }
 
+@keyframes scroll-dot {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: calc(100% - 5px);
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-chevron {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(4px) rotate(45deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -799,7 +902,9 @@ a {
   .hero-ticker-track,
   .fx-scanlines,
   .logo-mark,
-  .site-header::after {
+  .site-header::after,
+  .scroll-cue-dot,
+  .scroll-cue-chevron {
     animation: none !important;
     transition: none !important;
   }
@@ -870,6 +975,19 @@ a {
     padding-bottom: 4rem;
   }
 
+  .scroll-cue {
+    right: 0.85rem;
+    bottom: 3.75rem;
+  }
+
+  .scroll-cue-label {
+    font-size: 0.65rem;
+  }
+
+  .scroll-cue-track {
+    height: 40px;
+  }
+
   .hero-grid {
     opacity: 0.22;
     height: 34%;
@@ -894,25 +1012,26 @@ a {
 
 @media (min-width: 1024px) {
   body {
-    font-size: 18px;
+    font-size: 21px;
   }
 
   :root {
-    --header-h: 80px;
+    --header-h: 96px;
+    --max: 1080px;
   }
 
   .logo-text {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
 
   .logo-mark {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
   }
 
   .site-header .btn-sm {
-    padding: 0.8rem 1.35rem;
-    font-size: 1rem;
+    padding: 1rem 1.7rem;
+    font-size: 1.15rem;
   }
 
   .hero-media img {
@@ -920,11 +1039,95 @@ a {
   }
 
   .hero-content {
-    width: min(100%, 1080px);
+    width: min(100%, 1320px);
+    padding-bottom: 6.5rem;
+  }
+
+  .brand {
+    font-size: clamp(4rem, 5.6vw, 5.6rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 3.2vw, 3.25rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .lede {
+    font-size: 1.65rem;
+    max-width: 44em;
+    margin-bottom: 2.25rem;
+  }
+
+  .section {
+    padding: clamp(5.5rem, 10vw, 8.5rem) clamp(2rem, 5vw, 4rem);
+  }
+
+  .section-label {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2.8rem, 3.6vw, 3.6rem);
+    margin-bottom: 1.4rem;
+  }
+
+  .section-text {
+    font-size: 1.65rem;
+  }
+
+  .step {
+    gap: 1.4rem;
+    padding: 1.75rem 0 1.75rem 1.1rem;
+  }
+
+  .step-num {
+    font-size: 1.45rem;
+  }
+
+  .step h3 {
+    font-size: 1.7rem;
+  }
+
+  .step p {
+    font-size: 1.5rem;
+  }
+
+  .cta-title {
+    font-size: clamp(2.8rem, 3.6vw, 3.6rem);
+  }
+
+  .cta-text {
+    font-size: 1.65rem;
+    max-width: 38em;
+  }
+
+  .scroll-cue-label {
+    font-size: 1rem;
+  }
+
+  .scroll-cue-track {
+    height: 72px;
+  }
+
+  .hero-ticker-track {
+    font-size: 1.05rem;
+    padding: 0.85rem 0;
   }
 
   .btn-lg {
-    padding: 1.15rem 1.85rem;
-    font-size: 1.1rem;
+    padding: 1.4rem 2.35rem;
+    font-size: 1.35rem;
+  }
+
+  .btn-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .site-footer {
+    font-size: 1rem;
+    padding: 2.5rem clamp(1.5rem, 5vw, 3rem) 3rem;
   }
 }
