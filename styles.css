@@ -28,6 +28,7 @@
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -35,6 +36,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: var(--font-body);
+  font-size: 1rem;
   font-weight: 400;
   color: var(--text);
   background:
@@ -1054,27 +1056,23 @@ a {
 }
 
 @media (min-width: 1024px) {
-  body {
-    font-size: 21px;
-  }
-
   :root {
-    --header-h: 96px;
-    --max: 1080px;
+    --header-h: 72px;
+    --max: 920px;
   }
 
   .logo-text {
-    font-size: 1.4rem;
+    font-size: 17px;
   }
 
   .logo-mark {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
   }
 
   .site-header .btn-sm {
-    padding: 1rem 1.7rem;
-    font-size: 1.15rem;
+    padding: 0.65rem 1.15rem;
+    font-size: 14px;
   }
 
   .hero-media img {
@@ -1082,95 +1080,116 @@ a {
   }
 
   .hero-content {
-    width: min(100%, 1320px);
-    padding-bottom: 6.5rem;
+    width: min(100%, 1100px);
+    padding-bottom: 5.5rem;
   }
 
   .brand {
-    font-size: clamp(4rem, 5.6vw, 5.6rem);
-    margin-bottom: 1.5rem;
+    font-size: 56px;
+    margin-bottom: 1.1rem;
   }
 
   .hero-title {
-    font-size: clamp(2.5rem, 3.2vw, 3.25rem);
-    margin-bottom: 1.25rem;
-  }
-
-  .lede {
-    font-size: 1.65rem;
-    max-width: 44em;
-    margin-bottom: 2.25rem;
-  }
-
-  .section {
-    padding: clamp(5.5rem, 10vw, 8.5rem) clamp(2rem, 5vw, 4rem);
-  }
-
-  .section-label {
-    font-size: 1.2rem;
+    font-size: 30px;
     margin-bottom: 1rem;
   }
 
+  .lede {
+    font-size: 17px;
+    max-width: 42em;
+    margin-bottom: 1.75rem;
+  }
+
+  .section {
+    padding: 5rem clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .section-label {
+    font-size: 14px;
+    margin-bottom: 0.75rem;
+  }
+
   .section-title {
-    font-size: clamp(2.8rem, 3.6vw, 3.6rem);
-    margin-bottom: 1.4rem;
+    font-size: 34px;
+    margin-bottom: 1rem;
   }
 
   .section-text {
-    font-size: 1.65rem;
+    font-size: 17px;
   }
 
   .step {
-    gap: 1.4rem;
-    padding: 1.75rem 0 1.75rem 1.1rem;
+    gap: 1.1rem;
+    padding: 1.35rem 0 1.35rem 0.9rem;
   }
 
   .step-num {
-    font-size: 1.45rem;
+    font-size: 17px;
   }
 
   .step h3 {
-    font-size: 1.7rem;
+    font-size: 20px;
   }
 
   .step p {
-    font-size: 1.5rem;
+    font-size: 16px;
   }
 
   .cta-title {
-    font-size: clamp(2.8rem, 3.6vw, 3.6rem);
+    font-size: 34px;
   }
 
   .cta-text {
-    font-size: 1.65rem;
-    max-width: 38em;
+    font-size: 17px;
+    max-width: 36em;
   }
 
   .scroll-cue-label {
-    font-size: 1rem;
+    font-size: 12px;
   }
 
   .scroll-cue-track {
-    height: 72px;
+    height: 52px;
   }
 
   .hero-ticker-track {
-    font-size: 1.05rem;
-    padding: 0.85rem 0;
+    font-size: 13px;
+    padding: 0.6rem 0;
   }
 
   .btn-lg {
-    padding: 1.4rem 2.35rem;
-    font-size: 1.35rem;
+    padding: 0.95rem 1.6rem;
+    font-size: 16px;
   }
 
   .btn-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   .site-footer {
-    font-size: 1rem;
-    padding: 2.5rem clamp(1.5rem, 5vw, 3rem) 3rem;
+    font-size: 13px;
+    padding: 2rem clamp(1.25rem, 4vw, 2.5rem) 2.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .brand {
+    font-size: 64px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .lede,
+  .section-text,
+  .cta-text {
+    font-size: 18px;
+  }
+
+  .section-title,
+  .cta-title {
+    font-size: 38px;
   }
 }
