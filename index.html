@@ -18,12 +18,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans+JP:wght@400;500;700&family=Share+Tech+Mono&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="fx-scanlines" aria-hidden="true"></div>
+    <div class="fx-vignette" aria-hidden="true"></div>
+
     <header class="site-header">
       <a class="logo" href="#top" aria-label="WAKAYAMA ENGINEER PLATFORM">
         <span class="logo-mark" aria-hidden="true"></span>
@@ -41,7 +44,7 @@
 
     <main id="top">
       <section class="hero" aria-label="ヒーロー">
-        <div class="hero-media" aria-hidden="true">
+        <div class="hero-media" aria-hidden="true" data-parallax>
           <img
             src="./public/hero.jpg"
             alt=""
@@ -51,16 +54,19 @@
           />
         </div>
         <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-content">
-          <p class="brand reveal">WAKAYAMA ENGINEER PLATFORM</p>
-          <h1 class="reveal delay-1">
+          <p class="brand" data-glitch="WAKAYAMA ENGINEER PLATFORM">
+            WAKAYAMA ENGINEER PLATFORM
+          </p>
+          <h1 class="hero-title">
             和歌山のエンジニアと、<br />学ぶ人がつながる場所
           </h1>
-          <p class="lede reveal delay-2">
+          <p class="lede">
             現役エンジニアとプログラミングを学ぶ学生が交流する<br />
             Discord コミュニティです。
           </p>
-          <div class="hero-actions reveal delay-3">
+          <div class="hero-actions">
             <a
               class="btn btn-primary btn-lg"
               href="https://discord.com/invite/GpajM3mQ94"
@@ -82,11 +88,17 @@
             </a>
           </div>
         </div>
+        <div class="hero-ticker" aria-hidden="true">
+          <div class="hero-ticker-track">
+            <span>WAKAYAMA // ENGINEER // PLATFORM // DISCORD // CONNECT // CODE // LEARN //</span>
+            <span>WAKAYAMA // ENGINEER // PLATFORM // DISCORD // CONNECT // CODE // LEARN //</span>
+          </div>
+        </div>
       </section>
 
       <section class="section about" id="about">
         <div class="section-inner">
-          <p class="section-label reveal">About</p>
+          <p class="section-label reveal">ABOUT</p>
           <h2 class="section-title reveal delay-1">このサーバーについて</h2>
           <p class="section-text reveal delay-2">
             和歌山で働く現役エンジニアと、プログラミングを学ぶ学生が気軽に交流できる場をつくるための
@@ -98,7 +110,7 @@
 
       <section class="section join" id="join">
         <div class="section-inner">
-          <p class="section-label reveal">Who can join</p>
+          <p class="section-label reveal">ACCESS</p>
           <h2 class="section-title reveal delay-1">参加条件</h2>
           <p class="section-text reveal delay-2">
             ITに興味があれば、県内外を問わずどなたでも参加できます。エンジニアとしての経験や居住地は問いません。
@@ -108,11 +120,11 @@
 
       <section class="section steps" id="steps">
         <div class="section-inner">
-          <p class="section-label reveal">Getting started</p>
+          <p class="section-label reveal">PROTOCOL</p>
           <h2 class="section-title reveal delay-1">参加したらやること</h2>
           <ol class="step-list">
             <li class="step reveal">
-              <span class="step-num" aria-hidden="true">1</span>
+              <span class="step-num" aria-hidden="true">01</span>
               <div>
                 <h3>サーバーに参加</h3>
                 <p>
@@ -121,7 +133,7 @@
               </div>
             </li>
             <li class="step reveal delay-1">
-              <span class="step-num" aria-hidden="true">2</span>
+              <span class="step-num" aria-hidden="true">02</span>
               <div>
                 <h3>自己紹介をする</h3>
                 <p>
@@ -130,7 +142,7 @@
               </div>
             </li>
             <li class="step reveal delay-2">
-              <span class="step-num" aria-hidden="true">3</span>
+              <span class="step-num" aria-hidden="true">03</span>
               <div>
                 <h3>ロール付与を待つ</h3>
                 <p>
@@ -143,13 +155,15 @@
       </section>
 
       <section class="section cta" id="cta">
+        <div class="cta-frame" aria-hidden="true"></div>
         <div class="section-inner cta-inner">
-          <h2 class="cta-title reveal">まずは気軽に参加してみよう</h2>
-          <p class="cta-text reveal delay-1">
+          <p class="section-label reveal">HELLO, WORLD</p>
+          <h2 class="cta-title reveal delay-1">まずは気軽に参加してみよう</h2>
+          <p class="cta-text reveal delay-2">
             和歌山のエンジニアコミュニティで、<br />学びと交流を広げましょう。
           </p>
           <a
-            class="btn btn-primary btn-lg reveal delay-2"
+            class="btn btn-primary btn-lg reveal delay-3"
             href="https://discord.com/invite/GpajM3mQ94"
             target="_blank"
             rel="noopener noreferrer"
