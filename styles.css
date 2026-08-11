@@ -381,10 +381,14 @@ a {
   line-height: 1.85;
   color: var(--text-muted);
   word-break: keep-all;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
   line-break: strict;
   animation: rise-in 900ms var(--ease-out) 220ms both;
   opacity: 1;
+}
+
+.nobr {
+  white-space: nowrap;
 }
 
 .hero-actions {
@@ -949,8 +953,35 @@ a {
 }
 
 @media (max-width: 768px) {
+  .site-header {
+    --header-h: 60px;
+    gap: 0.65rem;
+    padding: 0 0.85rem;
+  }
+
+  .logo {
+    gap: 0.4rem;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .logo-mark {
+    width: 9px;
+    height: 9px;
+  }
+
   .logo-text {
-    max-width: 42vw;
+    max-width: none;
+    font-size: clamp(0.52rem, 2.7vw, 0.68rem);
+    letter-spacing: 0.04em;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .site-header .btn-sm {
+    flex: 0 0 auto;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.78rem;
   }
 
   .hero {
@@ -1023,7 +1054,8 @@ a {
   }
 
   .lede {
-    font-size: 1rem;
+    /* 1行に収めて「交流する」の途中改行を避ける */
+    font-size: clamp(0.82rem, 3.6vw, 0.95rem);
   }
 }
 
