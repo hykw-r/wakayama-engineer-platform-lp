@@ -697,6 +697,9 @@ a {
   font-size: clamp(1.65rem, 3.2vw, 2.85rem);
   font-weight: 700;
   line-height: 1.35;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
 }
 
 .cta-text {
@@ -1039,6 +1042,12 @@ a {
 
   .cta-frame {
     inset: 1.5rem 1rem;
+  }
+
+  .cta-title {
+    font-size: clamp(1.15rem, 5vw, 1.55rem);
+    max-width: 100%;
+    padding: 0 0.25rem;
   }
 
   .brand {
