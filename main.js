@@ -50,6 +50,97 @@ if (scrollCue) {
   window.addEventListener("scroll", syncScrollCue, { passive: true });
 }
 
+/* Share menu in header */
+const shareRoot = document.querySelector("[data-share]");
+if (shareRoot) {
+  const shareUrl = window.location.href;
+  const shareText =
+    "和歌山のエンジニアと学ぶ人がつながる場所 — WAKAYAMA ENGINEER PLATFORM";
+  const toggleBtn = shareRoot.querySelector("[data-share-toggle]");
+  const panel = shareRoot.querySelector("[data-share-panel]");
+  const nativeBtn = shareRoot.querySelector("[data-share-native]");
+  const xLink = shareRoot.querySelector("[data-share-x]");
+  const lineLink = shareRoot.querySelector("[data-share-line]");
+  const copyBtn = shareRoot.querySelector("[data-share-copy]");
+
+  const closePanel = () => {
+    if (!panel || !toggleBtn) return;
+    panel.hidden = true;
+    toggleBtn.setAttribute("aria-expanded", "false");
+  };
+
+  const openPanel = () => {
+    if (!panel || !toggleBtn) return;
+    panel.hidden = false;
+    toggleBtn.setAttribute("aria-expanded", "true");
+  };
+
+  if (toggleBtn && panel) {
+    toggleBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      if (panel.hidden) openPanel();
+      else closePanel();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!shareRoot.contains(event.target)) closePanel();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closePanel();
+    });
+  }
+
+  if (xLink) {
+    const params = new URLSearchParams({
+      text: `${shareText}\n${shareUrl}`,
+    });
+    xLink.href = `https://twitter.com/intent/tweet?${params.toString()}`;
+  }
+
+  if (lineLink) {
+    const params = new URLSearchParams({ url: shareUrl });
+    lineLink.href = `https://social-plugins.line.me/lineit/share?${params.toString()}`;
+  }
+
+  if (nativeBtn && navigator.share) {
+    nativeBtn.hidden = false;
+    nativeBtn.addEventListener("click", async () => {
+      closePanel();
+      try {
+        await navigator.share({
+          title: "WAKAYAMA ENGINEER PLATFORM",
+          text: shareText,
+          url: shareUrl,
+        });
+      } catch (error) {
+        if (error && error.name === "AbortError") return;
+      }
+    });
+  }
+
+  if (copyBtn) {
+    const defaultLabel = copyBtn.textContent;
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        copyBtn.classList.add("is-copied");
+        copyBtn.textContent = "コピーしました";
+        window.setTimeout(() => {
+          copyBtn.classList.remove("is-copied");
+          copyBtn.textContent = defaultLabel;
+          closePanel();
+        }, 1200);
+      } catch {
+        copyBtn.textContent = "失敗しました";
+        window.setTimeout(() => {
+          copyBtn.textContent = defaultLabel;
+        }, 1200);
+      }
+    });
+  }
+}
+
 if (!prefersReducedMotion) {
   const brand = document.querySelector("[data-glitch]");
   if (brand) {
