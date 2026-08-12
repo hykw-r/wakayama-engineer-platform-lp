@@ -53,7 +53,7 @@ if (scrollCue) {
 /* Share menu in header */
 const shareRoot = document.querySelector("[data-share]");
 if (shareRoot) {
-  const shareUrl = window.location.href;
+  const shareUrl = `${window.location.origin}${window.location.pathname}`;
   const shareText =
     "和歌山のエンジニアと学ぶ人がつながる場所 — WAKAYAMA ENGINEER PLATFORM";
   const toggleBtn = shareRoot.querySelector("[data-share-toggle]");
