@@ -932,6 +932,16 @@ a {
   color: var(--text-dim);
 }
 
+.footer-copy a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+.footer-copy a:hover {
+  color: var(--cyan);
+  text-decoration: underline;
+}
+
 /* Motion / reveal — stay readable even if JS/IO fails */
 .reveal {
   opacity: 1;
