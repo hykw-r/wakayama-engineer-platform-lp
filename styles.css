@@ -699,6 +699,53 @@ a {
   background: var(--bg-1);
 }
 
+.operator {
+  background:
+    linear-gradient(180deg, rgba(247, 37, 133, 0.05), transparent 42%),
+    var(--bg-2);
+}
+
+.operator-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem 1.4rem;
+  align-items: center;
+  margin-top: 1.75rem;
+  min-width: 0;
+}
+
+.operator-icon {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(45, 226, 230, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(5, 7, 12, 0.5),
+    0 0 20px rgba(247, 37, 133, 0.18);
+}
+
+.operator-copy {
+  min-width: 0;
+}
+
+.operator-name {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.operator-bio {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: clamp(1.02rem, 1.4vw, 1.2rem);
+  line-height: 1.85;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
 .step-list {
   list-style: none;
   margin: 2.25rem 0 0;
@@ -1262,6 +1309,15 @@ a {
     gap: 2.25rem;
   }
 
+  .operator-card {
+    gap: 1rem 1.1rem;
+  }
+
+  .operator-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
   .cta-frame {
     inset: 1.5rem 1rem;
   }
@@ -1347,6 +1403,24 @@ a {
 
   .section-text {
     font-size: 17px;
+  }
+
+  .operator-card {
+    gap: 1.4rem 1.6rem;
+    margin-top: 2rem;
+  }
+
+  .operator-icon {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
+
+  .operator-name {
+    font-size: 22px;
+  }
+
+  .operator-bio {
+    font-size: 16px;
   }
 
   .feature-list {
